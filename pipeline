@@ -6,18 +6,18 @@ pipelne {
       git 'https://github.com/vivek4574/studentapp-ui.git'
      }
     }
-   stage{
-    steps ('Build'){
+   stage ('Build'){
+    steps{
       sh '/opt/maven/bin/mvn clean package'
      }
     }
-   stage{
-    steps ('Test'){
+   stage ('Test'){
+    steps{
       echo 'Tested'
      }
     }
-   stage{
-    steps ('Deploy'){
+   stage ('Deploy'){
+    steps{
       echo 'deployed'
      }
     }
