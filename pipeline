@@ -1,0 +1,29 @@
+pipelne {
+  agent any
+  stages{
+   stage('pull'){
+     steps{
+      git 'https://github.com/vivek4574/studentapp-ui.git'
+     }
+    }
+   stage{
+    steps ('Build'){
+      sh '/opt/maven/bin/mvn clean package'
+     }
+    }
+   stage{
+    steps ('Test'){
+      echo 'Tested'
+     }
+    }
+   stage{
+    steps ('Deploy'){
+      echo 'deployed'
+     }
+    }
+
+
+   }
+
+}
+
